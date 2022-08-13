@@ -28,7 +28,7 @@ namespace _2048Game
             if (Field.KeyPressed == Keys.Right)
             {
                 borderX = Field.FieldWidth - 1;
-                deltaX = x == borderX ? 0 : GetDeltaX(x ,borderX);
+                deltaX = x == borderX ? 0 : GetDeltaX(y, x, borderX);
             }
         }
 
@@ -42,10 +42,20 @@ namespace _2048Game
             throw new NotImplementedException();
         }
 
-        private int GetDeltaX(int startLoc, int endLoc)
+        private int GetDeltaX(int col, int startLoc, int endLoc)
         {
-            int newLoc = 0;
-            return newLoc;
+            int newLoc = startLoc;
+            int i = startLoc < endLoc ? 1 : -1;
+            bool finished = false;
+            while (!finished)
+            {
+                if (Field.field[col, startLoc] is null)
+                    if (startLoc != endLoc)
+                        startLoc += i;
+                    else finished = true;
+                else finished = true;
+            }
+            return startLoc - newLoc;
         }
     }
 
