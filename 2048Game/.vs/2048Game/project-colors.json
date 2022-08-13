@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "68be096e-6821-40eb-aa9f-5535f89f2e37": {
+      "ProjectGuid": "68be096e-6821-40eb-aa9f-5535f89f2e37",
+      "DisplayName": "2048Game",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
