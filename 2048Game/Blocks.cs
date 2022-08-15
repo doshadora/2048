@@ -57,6 +57,22 @@ namespace _2048Game
             }
             return startLoc - newLoc;
         }
+
+        private int GetDeltaY(int row, int startLoc, int endLoc)
+        {
+            int newLoc = startLoc;
+            int i = startLoc < endLoc ? 1 : -1;
+            bool finished = false;
+            while (!finished)
+            {
+                if (Field.field[startLoc, row] is null)
+                    if (startLoc != endLoc)
+                        startLoc += i;
+                    else finished = true;
+                else finished = true;
+            }
+            return startLoc - newLoc;
+        }
     }
 
     public class BlockFixed : IBlock
