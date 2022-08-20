@@ -18,7 +18,6 @@ namespace _2048Game
 
         public BlockCommand Act(int x, int y)  // in - current coordinates on field
         {
-            throw new NotImplementedException();
             int deltaX = 0;
             int deltaY = 0;
 

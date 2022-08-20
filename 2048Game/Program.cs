@@ -16,7 +16,7 @@ namespace _2048Game
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new _2048Window());
         }
     }
 }

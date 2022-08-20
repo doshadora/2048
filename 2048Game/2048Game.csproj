@@ -56,6 +56,7 @@
     <Compile Include="BlockCommand.cs" />
     <Compile Include="Blocks.cs" />
     <Compile Include="Field.cs" />
+    <Compile Include="GameState.cs" />
     <Compile Include="IBlock.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
