@@ -30,14 +30,30 @@ namespace _2048Game
                 borderX = Field.FieldWidth - 1;
                 deltaX = x == borderX ? 0 : GetDeltaX(y, x, borderX);
             }
+            else if (Field.KeyPressed == Keys.Left)
+            {
+                borderX = 0;
+                deltaX = x == borderX ? 0 : GetDeltaX(y, x, borderX);
+            }
+            else if (Field.KeyPressed == Keys.Down)
+            {
+                borderY = Field.FieldHeight - 1;
+                deltaY = y == borderY ? 0 : GetDeltaY(x, y, borderY);
+            }
+            else if (Field.KeyPressed == Keys.Up)
+            {
+                borderY = 0;
+                deltaY = y == borderY ? 0 : GetDeltaY(x, y, borderY);
+            }
+
+            return new BlockCommand
+            {
+                DeltaX = deltaX,
+                DeltaY = deltaY
+            };
         }
 
         public bool DisappearsInConflict(IBlock block)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetDrawingPriority()
         {
             throw new NotImplementedException();
         }
@@ -49,6 +65,7 @@ namespace _2048Game
             bool finished = false;
             while (!finished)
             {
+                // if block can move further then move it, if it's not the end of field
                 if (Field.field[col, startLoc] is null)
                     if (startLoc != endLoc)
                         startLoc += i;
@@ -83,11 +100,6 @@ namespace _2048Game
         }
 
         public bool DisappearsInConflict(IBlock block)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetDrawingPriority()
         {
             throw new NotImplementedException();
         }

@@ -10,6 +10,5 @@ namespace _2048Game
     {
         public int DeltaX;
         public int DeltaY;
-        public IBlock TransformTo;
     }
 }
