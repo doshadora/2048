@@ -11,6 +11,5 @@ namespace _2048Game
     {
         BlockCommand Act(int x, int y);
         bool DisappearsInConflict(IBlock block);
-        int GetDrawingPriority();
     }
 }

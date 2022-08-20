@@ -18,7 +18,6 @@ namespace _2048Game
 
         public BlockCommand Act(int x, int y)  // in - current coordinates on field
         {
-            throw new NotImplementedException();
             int deltaX = 0;
             int deltaY = 0;
 
@@ -28,8 +27,29 @@ namespace _2048Game
             if (Field.KeyPressed == Keys.Right)
             {
                 borderX = Field.FieldWidth - 1;
-                deltaX = x == borderX ? 0 : GetDeltaX(x ,borderX);
+                deltaX = x == borderX ? 0 : GetDeltaX(y, x, borderX);
             }
+            else if (Field.KeyPressed == Keys.Left)
+            {
+                borderX = 0;
+                deltaX = x == borderX ? 0 : GetDeltaX(y, x, borderX);
+            }
+            else if (Field.KeyPressed == Keys.Down)
+            {
+                borderY = Field.FieldHeight - 1;
+                deltaY = y == borderY ? 0 : GetDeltaY(x, y, borderY);
+            }
+            else if (Field.KeyPressed == Keys.Up)
+            {
+                borderY = 0;
+                deltaY = y == borderY ? 0 : GetDeltaY(x, y, borderY);
+            }
+
+            return new BlockCommand
+            {
+                DeltaX = deltaX,
+                DeltaY = deltaY
+            };
         }
 
         public bool DisappearsInConflict(IBlock block)
@@ -37,15 +57,37 @@ namespace _2048Game
             throw new NotImplementedException();
         }
 
-        public int GetDrawingPriority()
+        private int GetDeltaX(int col, int startLoc, int endLoc)
         {
-            throw new NotImplementedException();
+            int newLoc = startLoc;
+            int i = startLoc < endLoc ? 1 : -1;
+            bool finished = false;
+            while (!finished)
+            {
+                // if block can move further then move it, if it's not the end of field
+                if (Field.field[col, startLoc] is null)
+                    if (startLoc != endLoc)
+                        startLoc += i;
+                    else finished = true;
+                else finished = true;
+            }
+            return startLoc - newLoc;
         }
 
-        private int GetDeltaX(int startLoc, int endLoc)
+        private int GetDeltaY(int row, int startLoc, int endLoc)
         {
-            int newLoc = 0;
-            return newLoc;
+            int newLoc = startLoc;
+            int i = startLoc < endLoc ? 1 : -1;
+            bool finished = false;
+            while (!finished)
+            {
+                if (Field.field[startLoc, row] is null)
+                    if (startLoc != endLoc)
+                        startLoc += i;
+                    else finished = true;
+                else finished = true;
+            }
+            return startLoc - newLoc;
         }
     }
 
@@ -57,11 +99,6 @@ namespace _2048Game
         }
 
         public bool DisappearsInConflict(IBlock block)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int GetDrawingPriority()
         {
             throw new NotImplementedException();
         }

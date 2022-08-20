@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace _2048Game
 {
-    public class BlockCommand
+    internal class GameState
     {
-        public int DeltaX;
-        public int DeltaY;
+        public List<BlockAnimation> Animations = new List<BlockAnimation>();
     }
 }

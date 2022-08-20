@@ -1,6 +1,5 @@
 C:\Users\darya.belousova\2048\2048Game\obj\Debug\2048Game.csproj.AssemblyReference.cache
 C:\Users\darya.belousova\2048\2048Game\obj\Debug\2048Game.csproj.SuggestedBindingRedirects.cache
-C:\Users\darya.belousova\2048\2048Game\obj\Debug\_2048Game.Form1.resources
 C:\Users\darya.belousova\2048\2048Game\obj\Debug\_2048Game.Properties.Resources.resources
 C:\Users\darya.belousova\2048\2048Game\obj\Debug\2048Game.csproj.GenerateResource.cache
 C:\Users\darya.belousova\2048\2048Game\obj\Debug\2048Game.csproj.CoreCompileInputs.cache
@@ -9,3 +8,4 @@ C:\Users\darya.belousova\2048\2048Game\bin\Debug\2048Game.exe
 C:\Users\darya.belousova\2048\2048Game\bin\Debug\2048Game.pdb
 C:\Users\darya.belousova\2048\2048Game\obj\Debug\2048Game.exe
 C:\Users\darya.belousova\2048\2048Game\obj\Debug\2048Game.pdb
+C:\Users\darya.belousova\2048\2048Game\obj\Debug\_2048Game._2048Window.resources
