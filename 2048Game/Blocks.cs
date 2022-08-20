@@ -9,16 +9,15 @@ namespace _2048Game
 {
     public class Block : IBlock
     {
-        public int value;
+        public int Value;
         public Block()
         {
             Random rnd = new Random();
-            value = rnd.Next(100) < 80 ? 2 : 4;
+            Value = rnd.Next(100) < 80 ? 2 : 4;
         }
 
         public BlockCommand Act(int x, int y)  // in - current coordinates on field
         {
-            throw new NotImplementedException();
             int deltaX = 0;
             int deltaY = 0;
 
